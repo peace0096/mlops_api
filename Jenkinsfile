@@ -24,8 +24,9 @@ pipeline {
 					usernameVariable: 'USER', 
 					passwordVariable: 'PWD'
 				]]) {
-					sh 'printf ${USER}'
-			}
+                    sh 'printf ${USER}'
+			    }
+            }
 		}
 	}
 }
