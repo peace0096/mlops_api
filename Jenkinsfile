@@ -19,8 +19,8 @@ pipeline {
 		stage("deploy") {
 			steps {
 				echo 'deploying the applicaiton...'
-                echo 'deploying with ${HARRY_CREDENTIALS}'
-                sh 'printf ${HARRY_CREDENTIALS}'
+                echo "deploying with ${HARRY_CREDENTIALS}"
+                sh "printf ${HARRY_CREDENTIALS}"
 			}
 		}
 	}
