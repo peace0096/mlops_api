@@ -1,23 +1,24 @@
 pipeline {
-    agent any
-    stages {
-        stage("build") {
-                steps {
-                    echo "building the application..."
-                }
-            }
-        stage("test") {
-            steps {
-                echo "testing the application..."
-            }
-        }
-        stage("deploy") {
-            steps {
-                echo "${env.GIT_BRANCH}"
-                echo "deploying the application..."
-            }
-        }
-    }
-    
-
+	agent any
+	environment {
+		NEW_VERSION = '1.0.0'
+	}
+	stages {
+		stage("build") {
+			steps {
+				echo 'building the applicaiton...'
+				echo "building version ${NEW_VERSION}"
+			}
+		}
+		stage("test") {
+			steps {
+				echo 'testing the applicaiton...'
+			}
+		}
+		stage("deploy") {
+			steps {
+				echo 'deploying the applicaiton...'
+			}
+		}
+	}
 }
