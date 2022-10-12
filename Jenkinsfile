@@ -20,7 +20,7 @@ pipeline {
 			steps {
 				echo 'deploying the applicaiton...'
                 withCredentials([[$class: 'UsernamePasswordMultiBinding',
-					credentialsId: 'admin_user_credentials', 
+					credentialsId: 'harry', 
 					usernameVariable: 'USER', 
 					passwordVariable: 'PWD'
 				]]) {
