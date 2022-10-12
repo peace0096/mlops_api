@@ -2,6 +2,7 @@ pipeline {
 	agent any
 	environment {
 		NEW_VERSION = '1.0.0'
+        HARRY_CREDENTIALS = credentials('harry_credentials')
 	}
 	stages {
 		stage("build") {
@@ -18,6 +19,8 @@ pipeline {
 		stage("deploy") {
 			steps {
 				echo 'deploying the applicaiton...'
+                echo 'deploying with ${HARRY_CREDENTIALS}'
+                sh 'printf ${HARRY_CREDENTIALS}'
 			}
 		}
 	}
